@@ -11,4 +11,4 @@ jobs:
           DOCKER_USERNAME: "nikschavan"
           DOCKER_PASSWORD: ${{ secrets.DockerPassword }}
         run: |
-          bash bin/build-images.sh
+          bash ${GITHUB_WORKSPACE}/bin/build-images.sh
