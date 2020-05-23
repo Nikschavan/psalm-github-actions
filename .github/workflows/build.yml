@@ -6,10 +6,12 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: Trigger build on dockerhub
         env:
           DOCKER_USERNAME: "nikschavan"
           DOCKER_PASSWORD: ${{ secrets.DockerPassword }}
         run: |
-          pwd
-          ls -l
+          bash bin/build-images.sh
