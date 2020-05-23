@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # Fail if anything inside the script fails.
 set -e
 
