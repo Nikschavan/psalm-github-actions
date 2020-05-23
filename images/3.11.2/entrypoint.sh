@@ -7,4 +7,4 @@ $COMPOSER_COMMAND
 echo "::endgroup::"
 
 /composer/vendor/bin/psalm --version
-/composer/vendor/bin/psalm --output-format=github $*
+/composer/vendor/bin/psalm $*
