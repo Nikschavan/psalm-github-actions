@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger build on dockerhub
-      - uses: shivammathur/setup-php@v2
-      - with:
+        uses: shivammathur/setup-php@v2
+        with:
           php-version: '7.4'
-      - env:
+        env:
           DOCKER_USERNAME: "nikschavan"
           DOCKER_PASSWORD: ${{ secrets.DockerPassword }}
-      - run: |
+        run: |
           composer install --prefer-dist
           bash bin/build-images.sh
