@@ -1,16 +1,14 @@
 name: Trigger rebuild
 
-on: [push]
+on: push
 
 jobs:
   trigger:
     runs-on: ubuntu-latest
-
     steps:
       - name: Trigger build on dockerhub
       - env:
           DOCKER_USERNAME: "nikschavan"
           DOCKER_PASSWORD: ${{ secrets.DockerPassword }}
-        run: |
-          composer install
+      - run: |
           bash bin/build-images.sh
