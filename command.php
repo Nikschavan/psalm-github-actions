@@ -15,7 +15,7 @@ foreach ( $psalm_versions as $version => $package ) {
 		$dockerfile = str_replace( '%%PSALM_VERSION%%', ':' . $version, $docker_template );
 
 		write_file( 'images/' . $version . '/Dockerfile', $dockerfile );
-        write_file( 'images/' . $version . '/entrypoint.sh', $entrypoint_template );
+		write_file( 'images/' . $version . '/entrypoint.sh', $entrypoint_template );
 	}
 }
 
