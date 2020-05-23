@@ -1,8 +1,6 @@
 name: Trigger rebuild
 
-on:
-  schedule:
-        - cron: '03 */10 * * *'
+on: [push]
 
 jobs:
   trigger:
