@@ -1,13 +1,13 @@
-FROM php:7.4-alpine
+FROM php:%%PHP_IMAGE%%
 
 LABEL "com.github.actions.name"="Psalm"
 LABEL "com.github.actions.description"="A static analysis tool for finding errors in PHP applications"
 LABEL "com.github.actions.icon"="check"
 LABEL "com.github.actions.color"="blue"
 
-LABEL "repository"="http://github.com/psalm/psalm-github-actions"
+LABEL "repository"="https://github.com/Nikschavan/psalm-github-actions"
 LABEL "homepage"="http://github.com/actions"
-LABEL "maintainer"="Matt Brown <github@muglug.com>"
+LABEL "maintainer"="Nikhil Chavan <email@nikhilchavan.com>"
 
 # Code borrowed from mickaelandrieu/psalm-ga which in turn borrowed from phpqa/psalm
 
@@ -26,7 +26,7 @@ ADD https://github.com/vimeo/psalm/commits/master.atom /dev/null
 
 RUN COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_HOME="/composer" \
-    composer global require --prefer-dist --no-progress --dev vimeo/psalm
+    composer global require --prefer-dist --no-progress --dev vimeo/psalm%%PSALM_VERSION%%
 
 ENV PATH /composer/vendor/bin:${PATH}
 
